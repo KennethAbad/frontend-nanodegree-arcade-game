@@ -21,14 +21,11 @@ Enemy.prototype.update = function(dt) {
     this.x = this.x + this.speed * dt;
     if (this.x > 505) {
         this.x = 0;
-        this.speed = getRandomValue(200, 400);
+        this.speed = Math.floor(Math.random() * (400 - 200 + 1)) + 300;
     }
 
 };
 
-function getRandomValue(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
